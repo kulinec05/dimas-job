@@ -1,0 +1,212 @@
+.button {
+  display: flex;
+  padding: 0 14px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease-in-out;
+  transition-property: color, background;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ================= BUTTON SIZES ================= */
+.small {
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.medium {
+  height: 44px;
+  border-radius: 10px;
+}
+
+.large {
+  height: 48px;
+  border-radius: 10px;
+}
+
+.huge {
+  height: 52px;
+  border-radius: 12px;
+}
+
+/* ============================ */
+
+
+/* ================= BUTTON TYPES  ================= */
+
+/* PRIMARY */
+.primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.primary:disabled:not(.isLoading) {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+}
+
+.primary:not(:disabled):hover {
+  background-color: var(--color-primary-hover);
+}
+
+.primary:not(:disabled):active {
+  background-color: var(--color-primary-active);
+}
+
+
+/* GRAY */
+.gray {
+  background-color: var(--color-silver);
+  color: var(--color-black);
+}
+
+.gray:disabled:not(.isLoading)  {
+  background-color: var(--color-silver);
+}
+
+.gray:not(:disabled):hover {
+  background-color: var(--color-silver-hover);
+}
+
+.gray:not(:disabled):active {
+  background-color: var(--color-silver-active);
+}
+
+
+/* GOST */
+.gost {
+  background-color: transparent;
+  color: var(--color-black);
+}
+
+.gost:disabled:not(.isLoading)  {
+  background-color: transparent;
+}
+
+.gost:not(:disabled):hover {
+  background-color: var(--color-silver);
+}
+
+.gost:not(:disabled):active {
+  background-color: var(--color-silver-active);
+}
+
+
+/* TEXT */
+.text {
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-dull-black);
+}
+
+.text:disabled:not(.isLoading) {
+  color: var(--color-dull-black);
+}
+
+.text:not(:disabled):hover,
+.text:not(:disabled):active {
+  color: var(--color-black);
+}
+
+.content {
+  position: relative;
+  display: inline-flex;
+  align-items: center; 
+  justify-content: center;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.contentHide {
+  animation: hideContent 0.4s ease-in-out forwards;
+}
+
+@keyframes hideContent {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+.contentVisible {
+  top: 100%;
+  animation: loadingContent 0.4s ease-in-out forwards;
+}
+
+@keyframes loadingContent {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loadingVisible {
+  animation: loadingVisible 0.4s ease-in-out forwards;
+}
+
+@keyframes loadingVisible {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.loadingHide {
+  animation: loadingHide 0.4s ease-in-out forwards;
+}
+
+@keyframes loadingHide {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -100%;
+  }
+}

@@ -1,0 +1,41 @@
+.detailsPage {
+  padding: 20px 16px;
+  background: #ffffff;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15), 1px 1px 28px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.detailsItem {
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  min-height: 32px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dedede;
+  overflow: hidden;
+}
+
+.borderNone {
+  border-bottom: none;
+}
+
+.detailsItemLabel {
+  flex: 0 0 calc(100% / 24 * 8);
+  max-width: calc(100% / 24 * 8);
+  text-align: left;
+}
+
+.detailsItemInformation {
+  flex: 0 0 calc(100% / 24 * 16);
+  max-width: calc(100% / 24 * 16);
+  padding: 4px 12px;
+  text-align: left;
+}
+
+.detailsItemMap {
+  width: 100%;
+  max-width: 882px;
+  height: 398px;
+  padding: 0;
+  overflow: hidden;
+}

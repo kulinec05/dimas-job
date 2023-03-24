@@ -1,0 +1,29 @@
+@import url('./reset.css');
+@import url('./variables/global.css');
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-famaly-main) !important;
+}
+
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: var(--navber-height);
+  background: var(--main-bg-color);
+  font: var(--font-m);
+  color: var(--primary-color);
+}
+
+.content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px 30px;
+  overflow: hidden;
+  overflow-y: scroll;
+}

@@ -1,0 +1,78 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0;
+
+  color: var(--color-black);
+
+  font-weight: 600;
+  font-style: normal;
+}
+
+.h1Title {
+  margin-bottom: 24px;
+
+  letter-spacing: -0.02em;
+
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.h2Title {
+  margin-bottom: 20px;
+
+  letter-spacing: -0.02em;
+
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.h3Title {
+  margin-bottom: 16px;
+
+  letter-spacing: -0.015em;
+
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.h4Title {
+  margin-bottom: 16px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.h5Title {
+  margin-bottom: 16px;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.h6Title {
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.noneMargin {
+  margin: 0;
+}
+
+.noneWrap {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

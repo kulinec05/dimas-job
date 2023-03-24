@@ -1,0 +1,56 @@
+.ant-upload-text-icon svg {
+  vertical-align: baseline;
+}
+
+.ant-upload-list-item-card-actions {
+  svg {
+    vertical-align: baseline;
+  }
+}
+
+.ant-upload-list-item-info {
+  cursor: pointer;
+}
+
+.ant-upload-list-item.ant-upload-list-item-undefined {
+  border-color: red;
+  color: red;
+
+  .ant-upload-list-item-card-actions .anticon {
+    color: red;
+  }
+}
+
+.ant-upload-list-item.ant-upload-list-item-error {
+  border-color: red;
+  color: red;
+
+  .ant-upload-list-item-card-actions .anticon {
+    color: red;
+  }
+}
+
+.custom-upload .ant-upload.ant-upload-select {
+  width: 100%;
+
+  .custom-btn-upload {
+    width: 100%;
+    border: 1px dashed rgb(109, 109, 110);
+
+    .anticon {
+      font-size: 16px;
+      color: rgb(109, 109, 110);
+    }
+  }
+
+  &:hover {
+    .custom-btn-upload {
+      border: 1px dashed #40a9ff;
+
+      .anticon {
+        font-size: 16px;
+        color: inherit;
+      }
+    }
+  }
+}

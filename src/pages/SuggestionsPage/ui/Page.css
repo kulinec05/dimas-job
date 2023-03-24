@@ -1,0 +1,20 @@
+.suggestionsTable {
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15), 1px 1px 28px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.suggestionsTable .ant-spin-nested-loading .ant-spin-container .ant-table {
+  background-color: transparent;
+}
+
+.suggestionsTable .ant-table-thead .ant-table-cell {
+  background-color: #ffffff;
+}
+
+.suggestionsTableLight {
+  background-color: #ffffff;
+}
+
+.suggestionsTableDark {
+  background-color: #f8f9fa;
+}
