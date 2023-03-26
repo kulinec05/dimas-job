@@ -6,6 +6,7 @@ import { Button, Form, message, Upload, UploadProps } from 'antd';
 //   UploadFile,
 // } from 'antd/es/upload/interface';
 import { UploadOutlined } from '@ant-design/icons';
+import { CompoundedComponent } from 'antd/es/float-button/interface';
 // import { getFileNameAndExt } from 'utils';
 
 // import './Upload.css';
@@ -120,11 +121,11 @@ const defaultProps: UploadProps = {
 //   extension: string;
 // }
 
-const Uploader = () => {
+const Uploader = ({ label }: { label: string }) => {
   return (
     <Form.Item
       name="result"
-      label="Результат"
+      label={label || 'Результат'}
       labelAlign="left"
       valuePropName="file"
     >

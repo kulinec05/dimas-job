@@ -4,11 +4,16 @@ import { ComplaintDetailsPage } from 'pages/ComplaintDetailsPage';
 import { SuggestionsPage } from 'pages/SuggestionsPage';
 import { BotSettings } from 'pages/BotSettings';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { NewsPage } from 'pages/NewsPage';
+import { NewsDetailsPage } from 'pages/NewsDetailPage';
 
 export enum AppRoutes {
   Complaints = 'complaints',
   ComplaintDetails = 'complaintDetails',
   Suggestions = 'suggestions',
+  News = 'news',
+  NewsAdd = 'newsAdd',
+  NewsEdit = 'newsEdit',
   BotSettings = 'botSettings',
   NOT_FOUND = 'not_found',
 }
@@ -30,6 +35,18 @@ export const RoutePath: Record<AppRoutes, Ssasa> = {
   [AppRoutes.Suggestions]: {
     label: 'Предложения',
     link: '/suggestions',
+  },
+  [AppRoutes.News]: {
+    label: 'Новости',
+    link: '/news',
+  },
+  [AppRoutes.NewsAdd]: {
+    label: 'Добавить новость',
+    link: '/news/add',
+  },
+  [AppRoutes.NewsEdit]: {
+    label: 'Редактирование новости',
+    link: '/news/:id',
   },
   [AppRoutes.BotSettings]: {
     label: 'Настройки бота',
@@ -53,6 +70,18 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.Suggestions]: {
     path: RoutePath.suggestions.link,
     element: <SuggestionsPage />,
+  },
+  [AppRoutes.News]: {
+    path: RoutePath.news.link,
+    element: <NewsPage />,
+  },
+  [AppRoutes.NewsEdit]: {
+    path: RoutePath.newsEdit.link,
+    element: <NewsDetailsPage />,
+  },
+  [AppRoutes.NewsAdd]: {
+    path: RoutePath.newsAdd.link,
+    element: <NewsDetailsPage />,
   },
   [AppRoutes.BotSettings]: {
     path: RoutePath.botSettings.link,
