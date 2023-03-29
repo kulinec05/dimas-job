@@ -1,0 +1,36 @@
+.filter {
+  width: 500px;
+}
+
+.filter .ant-popover-inner {
+  padding: 0px;
+}
+
+.filterTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 12px;
+  border-bottom: 1px solid #ced4da;
+}
+
+.filterContent {
+  height: 160px;
+  border-bottom: 1px solid #ced4da;
+  margin-bottom: 12px;
+}
+
+.datePicker .ant-picker {
+  width: 100%;
+}
+
+.filterFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.filterFooter > button:first-child {
+  margin-right: 12px;
+}

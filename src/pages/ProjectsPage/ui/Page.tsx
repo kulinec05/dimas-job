@@ -4,11 +4,12 @@ import { Space, TablePaginationConfig, TableProps, Tag } from 'antd';
 import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table/interface';
 import { Title } from 'components/Title';
-import { useGetNews } from '../lib';
-import { News, NewsListProps } from '../models';
+import { useGetProjects } from '../lib';
+import { Projects, ProjectsListProps } from '../models';
 import { StatusesColor } from 'utils/constants';
 import './Page.css';
 import { PlusOutlined } from '@ant-design/icons';
+import { convertDate, convertTime } from 'utils/date';
 
 const pageSize = 10;
 
@@ -22,12 +23,12 @@ const paginationOptions: TablePaginationConfig = {
 const Page = () => {
   const navigate = useNavigate();
 
-  const [filters, setFilters] = useState<NewsListProps>({
+  const [filters, setFilters] = useState<ProjectsListProps>({
     pageSize: pageSize,
     page: 1,
   });
 
-  const handleChange: TableProps<News>['onChange'] = (pagination) => {
+  const handleChange: TableProps<Projects>['onChange'] = (pagination) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
       page: pagination.current || 1,
@@ -35,22 +36,24 @@ const Page = () => {
   };
 
   const {
-    data: newsList,
+    data: eventsList,
     isFetching,
     isLoading,
     refetch,
-  } = useGetNews(filters);
+  } = useGetProjects(filters);
 
   useEffect(() => {
     refetch();
   }, [filters]);
 
-  const columns: ColumnsType<News> = useMemo(
+  const columns: ColumnsType<Projects> = useMemo(
     () => [
       {
         title: 'Дата публикации',
         dataIndex: 'created_at',
         key: 'created_at',
+        render: (_K, row) =>
+          convertDate(row.created_at) + ' ' + convertTime(row.created_at),
         ellipsis: true,
         width: '182px',
       },
@@ -81,7 +84,7 @@ const Page = () => {
           <Button
             type="primary"
             ghost
-            onClick={() => navigate(`/news/${row.id}`)}
+            onClick={() => navigate(`/events/${row.id}`)}
           >
             Редактировать
           </Button>
@@ -97,15 +100,15 @@ const Page = () => {
     <>
       <Space className="page-header" direction="horizontal" align="baseline">
         <Title headerType="h3" margin>
-          Новости
+          Проекты
         </Title>
         <Button
           type="primary"
           ghost
-          onClick={() => navigate(`/news/add`)}
+          onClick={() => navigate(`/events/add`)}
           icon={<PlusOutlined />}
         >
-          Добавить новость
+          Добавить проект
         </Button>
       </Space>
 
@@ -115,9 +118,9 @@ const Page = () => {
           index % 2 === 0 ? 'complaintsTableLight' : 'complaintsTableDark'
         }
         columns={columns}
-        dataSource={newsList?.data ?? []}
+        dataSource={eventsList?.data ?? []}
         loading={isFetching || isLoading}
-        pagination={{ ...paginationOptions, total: newsList?.total }}
+        pagination={{ ...paginationOptions, total: eventsList?.total }}
         onChange={handleChange}
         rowKey="id"
       />

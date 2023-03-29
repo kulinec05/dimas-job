@@ -6,6 +6,8 @@ import { BotSettings } from 'pages/BotSettings';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { NewsPage } from 'pages/NewsPage';
 import { NewsDetailsPage } from 'pages/NewsDetailPage';
+import { ProjectsPage } from 'pages/ProjectsPage';
+import { ProjectsDetailsPage } from 'pages/ProjectsDetailPage';
 
 export enum AppRoutes {
   Complaints = 'complaints',
@@ -14,6 +16,9 @@ export enum AppRoutes {
   News = 'news',
   NewsAdd = 'newsAdd',
   NewsEdit = 'newsEdit',
+  Projects = 'events',
+  ProjectsAdd = 'eventsAdd',
+  ProjectsEdit = 'eventsEdit',
   BotSettings = 'botSettings',
   NOT_FOUND = 'not_found',
 }
@@ -47,6 +52,18 @@ export const RoutePath: Record<AppRoutes, Ssasa> = {
   [AppRoutes.NewsEdit]: {
     label: 'Редактирование новости',
     link: '/news/:id',
+  },
+  [AppRoutes.Projects]: {
+    label: 'Проекты',
+    link: '/events',
+  },
+  [AppRoutes.ProjectsAdd]: {
+    label: 'Добавить проект',
+    link: '/events/add',
+  },
+  [AppRoutes.ProjectsEdit]: {
+    label: 'Редактирование проекта',
+    link: '/events/:id',
   },
   [AppRoutes.BotSettings]: {
     label: 'Настройки бота',
@@ -82,6 +99,18 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.NewsAdd]: {
     path: RoutePath.newsAdd.link,
     element: <NewsDetailsPage />,
+  },
+  [AppRoutes.Projects]: {
+    path: RoutePath.events.link,
+    element: <ProjectsPage />,
+  },
+  [AppRoutes.ProjectsEdit]: {
+    path: RoutePath.eventsEdit.link,
+    element: <ProjectsDetailsPage />,
+  },
+  [AppRoutes.ProjectsAdd]: {
+    path: RoutePath.eventsAdd.link,
+    element: <ProjectsDetailsPage />,
   },
   [AppRoutes.BotSettings]: {
     path: RoutePath.botSettings.link,

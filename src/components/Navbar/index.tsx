@@ -20,6 +20,9 @@ export const Navbar = () => {
         <RootLink className={styles.link} to={'/news'}>
           {'Новости'}
         </RootLink>
+        <RootLink className={styles.link} to={'/events'}>
+          {'Проекты'}
+        </RootLink>
         <RootLink className={styles.link} to={'/botSettings'}>
           {'Настройки бота'}
         </RootLink>
